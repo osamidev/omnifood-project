@@ -1,8 +1,4 @@
 "use strict";
-console.log("Hello world!");
-
-const myCompany = "TecPine";
-console.log(myCompany);
 
 // const h1 = document.querySelector(".heading-primary");
 // h1.style.backgroundColor = "red";
@@ -11,7 +7,6 @@ console.log(myCompany);
 
 const yearEl = document.querySelector(".year");
 const currentYear = new Date().getFullYear();
-console.log(currentYear);
 yearEl.textContent = currentYear;
 
 /////////////////////////////////////////////
