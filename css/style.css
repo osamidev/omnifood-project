@@ -22,6 +22,12 @@
 /* NAVIGATION */
 /**************************/
 
+.main-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .main-nav-list {
   list-style: none;
   display: flex;

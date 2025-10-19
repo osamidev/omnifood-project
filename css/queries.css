@@ -98,8 +98,9 @@
 
   .btn-mobile-nav {
     display: block;
+    z-index: 9999;
   }
-  .main-nav {
+  /* .main-nav {
     background-color: rgb(255, 255, 255, 0.9);
     -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(10px);
@@ -109,32 +110,48 @@
     transform: translateX(100%);
     width: 100%;
     height: 100vh;
-
     display: flex;
     align-items: center;
     justify-content: center;
 
     /* Hide nav */
-    /* Allows no transitions at all */
-    /* display: none;*/
+  /* Allows no transitions at all */
+  /* display: none;*/
 
-    /* 1) HIDE it visualy */
+  /* 1) HIDE it visualy *?
+  opacity: 0;
+  transition: all 0.5s ease-in;
+
+  /* 2) MAKE it unaccessible to mouse and keyboard */
+  /* pointer-events: none; */
+
+  /* 3) HIDE it from screen readers */
+  /* visibility: hidden; */
+  /* }  */
+  .main-nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    transform: translateX(100%);
+    transition: transform 0.5s ease-in;
+    overflow-x: hidden;
+    z-index: 9998;
     opacity: 0;
-    transition: all 0.5s ease-in;
-
-    /* 2) MAKE it unaccessible to mouse and keyboard */
     pointer-events: none;
-
-    /* 3) HIDE it from screen readers  */
     visibility: hidden;
   }
 
   .nav-open .main-nav {
+    transform: translateX(0);
     opacity: 1;
     pointer-events: auto;
     visibility: visible;
-    transform: translateX(0);
   }
+
   .main-nav-list {
     flex-direction: column;
     gap: 4.8rem;
